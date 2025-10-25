@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MentIQ - Mental Health Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" onclick="navigateTo('home')">
+                🧠 MentIQ
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu" id="navMenu">
+                    <li><button class="nav-btn active" onclick="navigateTo('home')">Home</button></li>
+                    <li><button class="nav-btn" onclick="navigateTo('articles')">Articles</button></li>
+                    <li><button class="nav-btn" onclick="navigateTo('doctors')">Doctors</button></li>
+                    <li><button class="nav-btn" onclick="navigateTo('chatbot')">Chatbot</button></li>
+                    <li><button class="nav-btn" onclick="navigateTo('flashcard')">Motivation</button></li>
+                </ul>
+                <a href="login.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 14px; text-decoration: none; margin-right: 15px;">Login</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
+            </div>
+            <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pages Container -->
+    <div class="container">
+        <!-- HOME PAGE -->
+        <div id="home" class="page active"></div>
+
+        <!-- ARTICLES PAGE -->
+        <div id="articles" class="page"></div>
+
+        <!-- DOCTORS PAGE -->
+        <div id="doctors" class="page"></div>
+
+        <!-- CHATBOT PAGE -->
+        <div id="chatbot" class="page"></div>
+
+        <!-- FLASHCARD PAGE -->
+        <div id="flashcard" class="page"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
