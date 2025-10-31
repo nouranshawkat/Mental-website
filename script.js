@@ -11,12 +11,12 @@ let selectedCards = [];
 
 // Articles Data
 const articles = [
-    { title: 'Understanding Depression', category: 'Depression', excerpt: 'Depression is more than sadness. Learn the signs and coping strategies.', icon: '🧠' },
-    { title: 'Managing Anxiety Disorders', category: 'Anxiety', excerpt: 'Explore proven techniques to manage anxiety and panic attacks.', icon: '💙' },
-    { title: 'Bipolar Disorder Explained', category: 'Bipolar', excerpt: 'A comprehensive guide to understanding mood episodes and treatment.', icon: '🌙' },
-    { title: 'PTSD Recovery Guide', category: 'PTSD', excerpt: 'Healing from trauma with evidence-based therapeutic approaches.', icon: '🕊️' },
-    { title: 'OCD Management Tips', category: 'OCD', excerpt: 'Understanding intrusive thoughts and breaking the cycle.', icon: '✨' },
-    { title: 'ADHD in Adults', category: 'ADHD', excerpt: 'Recognizing ADHD symptoms and strategies for daily life.', icon: '⚡' }
+    { title: 'Understanding Depression', category: 'Depression', excerpt: 'Depression is more than sadness. Learn the signs and coping strategies.', icon: '🧠', link: 'https://www.mayoclinic.org/diseases-conditions/depression/symptoms-causes/syc-20356007', image: 'https://eudaimonic.co.uk/wp-content/uploads/2020/04/Therapy-Unlimited-Depression.jpg' },
+    { title: 'Managing Anxiety Disorders', category: 'Anxiety', excerpt: 'Explore proven techniques to manage anxiety and panic attacks.', icon: '💙', link: 'https://www.medicalnewstoday.com/articles/323454', image: 'https://peninsulahealthcenter.com/wp-content/uploads/2023/09/shutterstock_1970640311-scaled.jpg' },
+    { title: 'Bipolar Disorder Explained', category: 'Bipolar', excerpt: 'A comprehensive guide to understanding mood episodes and treatment.', icon: '🌙', link: 'https://en.wikipedia.org/wiki/Bipolar_disorder', image: 'https://4.bp.blogspot.com/-4PZF1lj6_pM/VDtcYDe4WCI/AAAAAAAAAZA/QXT56R50CZ0/s1600/34980b84dae10c2b4e30e80436dc9b25.jpg' },
+    { title: 'PTSD Recovery Guide', category: 'PTSD', excerpt: 'Healing from trauma with evidence-based therapeutic approaches.', icon: '🕊️', link: 'https://neurolaunch.com/ptsd-recovery-stages/', image: 'https://therapymantra.co/wp-content/uploads/2022/04/ptsd.jpg' },
+    { title: 'OCD Management Tips', category: 'OCD', excerpt: 'Understanding intrusive thoughts and breaking the cycle.', icon: '✨', link: 'https://www.treatmyocd.com/blog/6-best-strategies-to-combat-obsessive-compulsive-disorder', image: 'https://media.istockphoto.com/id/694068988/photo/obsessive-compulsive-disorder.webp?a=1&b=1&s=612x612&w=0&k=20&c=I5eq0QWRcXJZyEQL6ZGrq2_U0ndjt7YK1vO5blvJYcA=' },
+    { title: 'ADHD in Adults', category: 'ADHD', excerpt: 'Recognizing ADHD symptoms and strategies for daily life.', icon: '⚡', link: 'https://www.healthline.com/health/adhd/adult-adhd', image: 'https://images.onlymyhealth.com/imported/images/2024/October/23_Oct_2024/mn-ADHD-adults.jpg' }
 ];
 
 // Doctors Data
@@ -26,7 +26,26 @@ const doctors = [
     { name: 'Dr. Fatima Hassan', specialty: 'Clinical Psychologist', country: 'Egypt', city: 'Alexandria', rating: '4.7', experience: '8 years', avatar: '👩‍⚕️' },
     { name: 'Dr. Ahmed Karim', specialty: 'Psychiatrist', country: 'Egypt', city: 'Cairo', rating: '4.6', experience: '15 years', avatar: '👨‍⚕️' },
     { name: 'Dr. Emily Brown', specialty: 'Psychologist', country: 'USA', city: 'New York', rating: '4.8', experience: '9 years', avatar: '👩‍⚕️' },
-    { name: 'Dr. Marcus Jones', specialty: 'Counselor', country: 'UK', city: 'London', rating: '4.7', experience: '7 years', avatar: '👨‍⚕️' }
+    { name: 'Dr. Marcus Jones', specialty: 'Counselor', country: 'UK', city: 'London', rating: '4.7', experience: '7 years', avatar: '👨‍⚕️' },
+    { name: 'Dr. Leila Mostafa', specialty: 'Clinical Psychologist', country: 'Egypt', city: 'Giza', rating: '4.9', experience: '11 years', avatar: '👩‍⚕️' },
+    { name: 'Dr. David Chen', specialty: 'Psychiatrist', country: 'USA', city: 'Los Angeles', rating: '4.8', experience: '13 years', avatar: '👨‍⚕️' },
+    { name: 'Dr. Sophia Garcia', specialty: 'Psychologist', country: 'USA', city: 'Miami', rating: '4.7', experience: '10 years', avatar: '👩‍⚕️' },
+    { name: 'Dr. Noor Al-Rashid', specialty: 'Counselor', country: 'UAE', city: 'Dubai', rating: '4.8', experience: '9 years', avatar: '👩‍⚕️' },
+    { name: 'Dr. Oliver Thompson', specialty: 'Psychiatrist', country: 'UK', city: 'Manchester', rating: '4.6', experience: '14 years', avatar: '👨‍⚕️' },
+    { name: 'Dr. Amara Okafor', specialty: 'Clinical Psychologist', country: 'UK', city: 'London', rating: '4.9', experience: '8 years', avatar: '👩‍⚕️' },
+    { name: 'Dr. Hassan El-Sayed', specialty: 'Psychologist', country: 'Egypt', city: 'Cairo', rating: '4.7', experience: '11 years', avatar: '👨‍⚕️' },
+    { name: 'Dr. Rachel Morrison', specialty: 'Counselor', country: 'USA', city: 'Chicago', rating: '4.8', experience: '7 years', avatar: '👩‍⚕️' },
+    { name: 'Dr. Khalid Al-Mansoori', specialty: 'Psychiatrist', country: 'UAE', city: 'Abu Dhabi', rating: '4.7', experience: '12 years', avatar: '👨‍⚕️' },
+    { name: 'Dr. Isabella Romano', specialty: 'Psychologist', country: 'UK', city: 'Liverpool', rating: '4.8', experience: '9 years', avatar: '👩‍⚕️' },
+    { name: 'Dr. Youssef Mansour', specialty: 'Clinical Psychologist', country: 'Egypt', city: 'Alexandria', rating: '4.6', experience: '10 years', avatar: '👨‍⚕️' },
+    { name: 'Dr. Anna Williams', specialty: 'Psychiatrist', country: 'USA', city: 'Boston', rating: '4.9', experience: '11 years', avatar: '👩‍⚕️' },
+    { name: 'Dr. Mohamed Ibrahim', specialty: 'Counselor', country: 'Egypt', city: 'Cairo', rating: '4.7', experience: '8 years', avatar: '👨‍⚕️' },
+    { name: 'Dr. Sarah Richardson', specialty: 'Psychologist', country: 'UK', city: 'Birmingham', rating: '4.8', experience: '10 years', avatar: '👩‍⚕️' },
+    { name: 'Dr. Amir Al-Hakim', specialty: 'Psychiatrist', country: 'UAE', city: 'Sharjah', rating: '4.6', experience: '13 years', avatar: '👨‍⚕️' },
+    { name: 'Dr. Jessica Turner', specialty: 'Clinical Psychologist', country: 'USA', city: 'Seattle', rating: '4.8', experience: '9 years', avatar: '👩‍⚕️' },
+    { name: 'Dr. Tarek Eldin', specialty: 'Counselor', country: 'Egypt', city: 'Giza', rating: '4.8', experience: '7 years', avatar: '👨‍⚕️' },
+    { name: 'Dr. Nicole Dubois', specialty: 'Psychiatrist', country: 'UK', city: 'Leeds', rating: '4.7', experience: '12 years', avatar: '👩‍⚕️' },
+    { name: 'Dr. Rashid Al-Kaabi', specialty: 'Psychologist', country: 'UAE', city: 'Dubai', rating: '4.9', experience: '11 years', avatar: '👨‍⚕️' }
 ];
 
 // Motivation Cards Data
@@ -74,15 +93,12 @@ const botResponses = {
 // ========== NAVIGATION FUNCTIONS ==========
 
 function navigateTo(pageName) {
-    // Hide all pages
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => page.classList.remove('active'));
 
-    // Show selected page
     document.getElementById(pageName).classList.add('active');
     currentPage = pageName;
 
-    // Update navigation buttons
     const navBtns = document.querySelectorAll('.nav-btn');
     navBtns.forEach(btn => btn.classList.remove('active'));
     
@@ -98,23 +114,16 @@ function navigateTo(pageName) {
         navBtns[navButtonMap[pageName]].classList.add('active');
     }
 
-    // Close mobile menu
     closeMobileMenu();
-
-    // Initialize page content
-    if (pageName === 'home') {
-        initHome();
-    } else if (pageName === 'articles') {
-        initArticles();
+    
+    // Initialize page content when navigating
+    if (pageName === 'articles') {
+        renderCategoryFilters();
+        filterArticles(null);
     } else if (pageName === 'doctors') {
-        initDoctors();
-    } else if (pageName === 'chatbot') {
-        initChatbot();
-    } else if (pageName === 'flashcard') {
-        initFlashcard();
+        renderDoctors(doctors);
     }
 
-    // Scroll to top
     window.scrollTo(0, 0);
 }
 
@@ -128,122 +137,18 @@ function closeMobileMenu() {
     navMenu.classList.remove('active');
 }
 
-// ========== HOME PAGE ==========
-
-function initHome() {
-    const homePage = document.getElementById('home');
-    
-    homePage.innerHTML = `
-        <div class="hero">
-            <div class="hero-icon">🧠</div>
-            <h1>Welcome to MentIQ</h1>
-            <p>Raising awareness isn't just about speaking out — it's about helping someone find light in their darkest moment</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="navigateTo('articles')">Explore Articles</button>
-                <button class="btn btn-secondary" onclick="navigateTo('doctors')">Find a Doctor</button>
-            </div>
-        </div>
-
-        <div class="features">
-            <div class="feature-card">
-                <div class="icon">📚</div>
-                <h3>Learn</h3>
-                <p>Educational articles on mental health conditions</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">👨‍⚕️</div>
-                <h3>Connect</h3>
-                <p>Find qualified mental health professionals</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">🤖</div>
-                <h3>Support</h3>
-                <p>AI chatbot for initial guidance and support</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">✨</div>
-                <h3>Motivate</h3>
-                <p>Daily motivation and positive affirmations</p>
-            </div>
-        </div>
-        
-        <!-- Contact Section -->
-        <div class="contact-section">
-            <h2 class="section-title">Book Online Consultation</h2>
-            <p class="section-subtitle">Connect with a mental health specialist for personalized support</p>
-            <div class="contact-container">
-                <div class="contact-form-card">
-                    <form class="contact-form" onsubmit="submitConsultation(event)">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" id="contactName" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" id="contactEmail" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Phone Number</label>
-                                <input type="tel" id="contactPhone" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Preferred Date</label>
-                                <input type="date" id="consultationDate" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Consultation Type</label>
-                            <select id="consultationType" required>
-                                <option value="">Select consultation type</option>
-                                <option value="anxiety">Anxiety & Stress</option>
-                                <option value="depression">Depression</option>
-                                <option value="therapy">General Therapy</option>
-                                <option value="couples">Couples Counseling</option>
-                                <option value="family">Family Therapy</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Message (Optional)</label>
-                            <textarea id="consultationMessage" rows="4" placeholder="Tell us about your concerns or what you'd like to discuss..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary contact-btn">📅 Book Consultation</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    `;
-}
-
 // ========== ARTICLES PAGE ==========
-
-function initArticles() {
-    const articlesPage = document.getElementById('articles');
-    
-    articlesPage.innerHTML = `
-        <h2 class="page-title">Mental Health Articles</h2>
-        <div class="category-filter" id="categoryFilter"></div>
-        <div class="articles-grid" id="articlesGrid"></div>
-    `;
-
-    renderCategoryFilters();
-    filterArticles(null);
-}
 
 function renderCategoryFilters() {
     const categoryFilter = document.getElementById('categoryFilter');
     categoryFilter.innerHTML = '';
 
-    // Add "All" button
     const allBtn = document.createElement('button');
     allBtn.className = 'category-btn active';
     allBtn.textContent = 'All';
     allBtn.onclick = () => filterArticles(null);
     categoryFilter.appendChild(allBtn);
 
-    // Add category buttons
     const categories = [...new Set(articles.map(a => a.category))];
     categories.forEach(category => {
         const btn = document.createElement('button');
@@ -264,19 +169,45 @@ function filterArticles(category) {
     filtered.forEach(article => {
         const card = document.createElement('div');
         card.className = 'article-card';
-        card.innerHTML = `
-            <div class="article-header">${article.icon}</div>
-            <div class="article-body">
-                <div class="article-category">${article.category}</div>
-                <div class="article-title">${article.title}</div>
-                <div class="article-excerpt">${article.excerpt}</div>
-                <div class="read-more">Read More →</div>
-            </div>
-        `;
+        
+        const header = document.createElement('div');
+        header.className = 'article-header';
+        header.style.backgroundImage = `url(${article.image})`;
+        header.style.backgroundSize = 'cover';
+        header.style.backgroundPosition = 'center';
+        card.appendChild(header);
+
+        const body = document.createElement('div');
+        body.className = 'article-body';
+        
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'article-category';
+        categoryDiv.textContent = article.category;
+        body.appendChild(categoryDiv);
+
+        const titleDiv = document.createElement('div');
+        titleDiv.className = 'article-title';
+        titleDiv.textContent = article.title;
+        body.appendChild(titleDiv);
+
+        const excerptDiv = document.createElement('div');
+        excerptDiv.className = 'article-excerpt';
+        excerptDiv.textContent = article.excerpt;
+        body.appendChild(excerptDiv);
+
+        const readMore = document.createElement('div');
+        readMore.className = 'read-more';
+        const link = document.createElement('a');
+        link.href = article.link;
+        link.target = '_blank';
+        link.textContent = 'Read More →';
+        readMore.appendChild(link);
+        body.appendChild(readMore);
+
+        card.appendChild(body);
         articlesGrid.appendChild(card);
     });
 
-    // Update category button states
     const categoryBtns = document.querySelectorAll('.category-btn');
     categoryBtns.forEach(btn => {
         btn.classList.remove('active');
@@ -287,51 +218,6 @@ function filterArticles(category) {
 }
 
 // ========== DOCTORS PAGE ==========
-
-function initDoctors() {
-    const doctorsPage = document.getElementById('doctors');
-    
-    doctorsPage.innerHTML = `
-        <h2 class="page-title">Find a Mental Health Professional</h2>
-        <div class="filters-section">
-            <div class="filter-group">
-                <div>
-                    <label>Country</label>
-                    <select id="countryFilter" onchange="applyDoctorFilters()">
-                        <option value="">All Countries</option>
-                        <option value="Egypt">Egypt</option>
-                        <option value="USA">USA</option>
-                        <option value="UK">UK</option>
-                        <option value="UAE">UAE</option>
-                    </select>
-                </div>
-                <div>
-                    <label>City</label>
-                    <select id="cityFilter" onchange="applyDoctorFilters()">
-                        <option value="">All Cities</option>
-                        <option value="Cairo">Cairo</option>
-                        <option value="Alexandria">Alexandria</option>
-                        <option value="New York">New York</option>
-                        <option value="London">London</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Specialty</label>
-                    <select id="specialtyFilter" onchange="applyDoctorFilters()">
-                        <option value="">All Specialties</option>
-                        <option value="Psychiatrist">Psychiatrist</option>
-                        <option value="Psychologist">Psychologist</option>
-                        <option value="Clinical Psychologist">Clinical Psychologist</option>
-                        <option value="Counselor">Counselor</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="doctors-list" id="doctorsList"></div>
-    `;
-
-    renderDoctors(doctors);
-}
 
 function applyDoctorFilters() {
     const country = document.getElementById('countryFilter').value;
@@ -352,30 +238,68 @@ function renderDoctors(doctorsList) {
     doctorsContainer.innerHTML = '';
 
     if (doctorsList.length === 0) {
-        doctorsContainer.innerHTML = '<div class="empty-state">No doctors found matching your criteria.</div>';
+        const emptyState = document.createElement('div');
+        emptyState.className = 'empty-state';
+        emptyState.textContent = 'No doctors found matching your criteria.';
+        doctorsContainer.appendChild(emptyState);
         return;
     }
 
     doctorsList.forEach(doctor => {
         const card = document.createElement('div');
         card.className = 'doctor-card';
-        card.innerHTML = `
-            <div class="doctor-avatar">${doctor.avatar}</div>
-            <div class="doctor-info">
-                <div class="doctor-name">${doctor.name}</div>
-                <div class="doctor-specialty">${doctor.specialty}</div>
-                <div class="doctor-details">
-                    <span>📍 ${doctor.city}, ${doctor.country}</span>
-                    <span>⏱️ ${doctor.experience}</span>
-                    <span class="doctor-rating">⭐ ${doctor.rating}</span>
-                </div>
-            </div>
-            <div class="doctor-actions">
-                <button class="action-btn" onclick="contactDoctor('${doctor.name}', 'call')">📞 Call</button>
-                <button class="action-btn" onclick="contactDoctor('${doctor.name}', 'message')">💬 Message</button>
-                <button class="action-btn" onclick="saveDoctor('${doctor.name}')">❤️ Save</button>
-            </div>
+
+        const avatar = document.createElement('div');
+        avatar.className = 'doctor-avatar';
+        avatar.textContent = doctor.avatar;
+        card.appendChild(avatar);
+
+        const info = document.createElement('div');
+        info.className = 'doctor-info';
+
+        const name = document.createElement('div');
+        name.className = 'doctor-name';
+        name.textContent = doctor.name;
+        info.appendChild(name);
+
+        const specialty = document.createElement('div');
+        specialty.className = 'doctor-specialty';
+        specialty.textContent = doctor.specialty;
+        info.appendChild(specialty);
+
+        const details = document.createElement('div');
+        details.className = 'doctor-details';
+        details.innerHTML = `
+            <span>📍 ${doctor.city}, ${doctor.country}</span>
+            <span>⏱️ ${doctor.experience}</span>
+            <span class="doctor-rating">⭐ ${doctor.rating}</span>
         `;
+        info.appendChild(details);
+
+        card.appendChild(info);
+
+        const actions = document.createElement('div');
+        actions.className = 'doctor-actions';
+
+        const callBtn = document.createElement('button');
+        callBtn.className = 'action-btn';
+        callBtn.textContent = '📞 Call';
+        callBtn.onclick = () => contactDoctor(doctor.name, 'call');
+        actions.appendChild(callBtn);
+
+        const messageBtn = document.createElement('button');
+        messageBtn.className = 'action-btn';
+        messageBtn.textContent = '💬 Message';
+        messageBtn.onclick = () => contactDoctor(doctor.name, 'message');
+        actions.appendChild(messageBtn);
+
+        const saveBtn = document.createElement('button');
+        saveBtn.className = 'action-btn';
+        saveBtn.textContent = '❤️ Save';
+        saveBtn.onclick = () => saveDoctor(doctor.name);
+        actions.appendChild(saveBtn);
+
+        card.appendChild(actions);
         doctorsContainer.appendChild(card);
     });
 }
@@ -391,26 +315,6 @@ function saveDoctor(doctorName) {
 
 // ========== CHATBOT PAGE ==========
 
-function initChatbot() {
-    const chatbotPage = document.getElementById('chatbot');
-    
-    chatbotPage.innerHTML = `
-        <h2 class="page-title">Mental Health Support Chatbot</h2>
-        <div class="chat-container">
-            <div class="chat-header">💬 MentIQ Assistant</div>
-            <div class="chat-messages" id="chatMessages">
-                <div class="message bot-message">
-                    Hello! 👋 I'm here to listen and support you. Please share what's on your mind.
-                </div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChatKeypress(event)">
-                <button class="send-btn" onclick="sendChatMessage()">Send</button>
-            </div>
-        </div>
-    `;
-}
-
 function handleChatKeypress(event) {
     if (event.key === 'Enter') {
         sendChatMessage();
@@ -425,7 +329,6 @@ function sendChatMessage() {
 
     const chatMessages = document.getElementById('chatMessages');
 
-    // Add user message
     const userMsg = document.createElement('div');
     userMsg.className = 'message user-message';
     userMsg.textContent = message;
@@ -434,7 +337,6 @@ function sendChatMessage() {
     chatInput.value = '';
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
-    // Add bot response after delay
     setTimeout(() => {
         const botMsg = document.createElement('div');
         botMsg.className = 'message bot-message';
@@ -447,46 +349,18 @@ function sendChatMessage() {
 function getBotResponse(message) {
     const lowerMessage = message.toLowerCase();
 
-    // Check for keywords
     for (let keyword in botResponses) {
         if (lowerMessage.includes(keyword)) {
             return botResponses[keyword];
         }
     }
 
-    // Default response
     return 'Thank you for sharing. Remember, seeking help is a sign of strength, not weakness. Would you like to explore our resources or find a professional?';
 }
 
 // ========== FLASHCARD PAGE ==========
 
-function initFlashcard() {
-    const flashcardPage = document.getElementById('flashcard');
-    
-    flashcardPage.innerHTML = `
-        <h2 class="page-title">Daily Motivation Challenge</h2>
-        <div class="flashcard-container">
-            <div class="streak-counter">🔥 Streak: <span id="streakCount">${getStreak()}</span> days</div>
-            <p class="game-title">Choose a card to reveal your daily motivation message</p>
-            <div class="cards-wrapper" id="cardsWrapper">
-                <div class="flashcard left" onclick="selectCard(0)">✨</div>
-                <div class="flashcard center" onclick="selectCard(1)">💫</div>
-                <div class="flashcard right" onclick="selectCard(2)">⭐</div>
-            </div>
-            <div id="messageContainer"></div>
-            <div class="game-buttons" id="gameButtons" style="display: none;">
-                <button class="card-btn card-btn-primary" onclick="resetGame()">🎲 Play Again</button>
-                <button class="card-btn card-btn-secondary" onclick="saveSelectedCard()">💾 Save Message</button>
-            </div>
-        </div>
-    `;
-
-    shuffleCards();
-    addCardHoverEffects();
-}
-
 function shuffleCards() {
-    // Shuffle motivation cards and select 3 random ones
     const shuffled = [...motivationCards].sort(() => 0.5 - Math.random());
     window.selectedCards = shuffled.slice(0, 3);
     window.gameActive = true;
@@ -529,7 +403,6 @@ function selectCard(position) {
     const cards = document.querySelectorAll('.flashcard');
     const selectedCard = cards[position];
     
-    // Animate non-selected cards away
     cards.forEach((card, index) => {
         if (index !== position) {
             card.style.opacity = '0.3';
@@ -538,11 +411,9 @@ function selectCard(position) {
         }
     });
     
-    // Animate selected card
     selectedCard.classList.add('selected');
     selectedCard.style.transform = 'scale(1.2) rotateY(360deg)';
     
-    // Show message after animation
     setTimeout(() => {
         showRevealedMessage(position);
         updateStreak();
@@ -553,14 +424,19 @@ function showRevealedMessage(cardIndex) {
     const messageContainer = document.getElementById('messageContainer');
     const selectedMessage = window.selectedCards[cardIndex];
 
-    messageContainer.innerHTML = `
-        <div class="revealed-message">
-            <h3>✨ Your Daily Motivation ✨</h3>
-            <p>"${selectedMessage}"</p>
-        </div>
-    `;
+    const revealedMsg = document.createElement('div');
+    revealedMsg.className = 'revealed-message';
 
-    // Show game buttons with delay
+    const title = document.createElement('h3');
+    title.textContent = '✨ Your Daily Motivation ✨';
+    revealedMsg.appendChild(title);
+
+    const text = document.createElement('p');
+    text.textContent = `"${selectedMessage}"`;
+    revealedMsg.appendChild(text);
+
+    messageContainer.appendChild(revealedMsg);
+
     setTimeout(() => {
         document.getElementById('gameButtons').style.display = 'flex';
     }, 300);
@@ -627,25 +503,23 @@ function updateStreak() {
     let currentStreak = parseInt(localStorage.getItem('motivationStreak') || '0');
     
     if (lastPlayed === today) {
-        // Already played today, don't update streak
         return;
     } else if (lastPlayed === yesterdayStr) {
-        // Played yesterday, increment streak
         currentStreak += 1;
     } else if (lastPlayed !== yesterdayStr && lastPlayed !== null) {
-        // Missed a day, reset streak
         currentStreak = 1;
     } else {
-        // First time playing
         currentStreak = 1;
     }
     
     localStorage.setItem('motivationStreak', currentStreak.toString());
     localStorage.setItem('lastMotivationDate', today);
     
-    document.getElementById('streakCount').textContent = currentStreak;
+    const streakElement = document.getElementById('streakCount');
+    if (streakElement) {
+        streakElement.textContent = currentStreak;
+    }
     
-    // Show streak celebration for milestones
     if (currentStreak > 1 && currentStreak % 5 === 0) {
         setTimeout(() => {
             alert(`🎉 Amazing! You've reached a ${currentStreak}-day streak! Keep it up!`);
@@ -679,7 +553,7 @@ function loadTheme() {
     }
 }
 
-// ========== INITIALIZE ON LOAD ==========
+// ========== CONSULTATION FORM ==========
 
 function submitConsultation(event) {
     event.preventDefault();
@@ -712,7 +586,10 @@ function submitConsultation(event) {
     event.target.reset();
 }
 
+// ========== INITIALIZE ON LOAD ==========
+
 document.addEventListener('DOMContentLoaded', () => {
     loadTheme();
-    navigateTo('home');
+    shuffleCards();
+    addCardHoverEffects();
 });
